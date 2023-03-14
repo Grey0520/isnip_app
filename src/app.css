@@ -14,10 +14,10 @@
 }
 
 :root {
-  --main-color: hsl(var(--l));
-  --main-color-dark: hsl(var(--pf));
-  --main-color-light: hsl(var(--pf));
-  --text-color: hsl(var(--b3));
+  --main-color: hsl(var(--p));
+  --main-color-dark: hsl(var(--p));
+  --main-color-light: hsl(var(--nc));
+  --text-color: hsl(var(--bc));
 }
 
 body {
@@ -42,10 +42,10 @@ nav {
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: hsl(var(--p));
+  background-color:hsl(var(--b1));
   width: 16rem;
   padding: 1.8rem 0.85rem;
-  color: hsl(var(--a));
+  color: hsl(var(--inc));
   display: flex;
   flex-direction: column;
   transition: width 0.5s ease-in-out;
@@ -198,7 +198,7 @@ nav:hover .shrink-btn,
 
 .sidebar-links a.active,
 .sidebar-links a:hover {
-  color: hsl(var(--a));
+  color: #fff;
 }
 
 .sidebar-links a .link {

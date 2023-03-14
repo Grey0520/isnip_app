@@ -2,15 +2,17 @@
     import { onMount } from "svelte";
     let root;
     let search;
-    function handleKeydown(event) {
-      if (event.ctrlKey && event.key === 'k') {
-        document.body.classList.remove("shrink");
-        search.lastElementChild.focus(); 
-      }
-          if (event.key == "Escape") {
-        document.body.classList.toggle("shrink"); 
-      }
-      }
+  //   function handleKeydown(event) {
+  //     if (event.ctrlKey && event.key === 'k') {
+  //       document.body.classList.remove("shrink");
+  //       search.lastElementChild.focus(); 
+  //     }
+  //         if (event.key == "Escape") {
+  //       document.body.classList.toggle("shrink"); 
+  //       setTimeout(moveActiveTab, 400)
+        
+  //   }
+  // }
     onMount(() => {
       const shrink_btn = root.querySelector(".shrink-btn");
       search = root.querySelector(".search");
@@ -20,7 +22,7 @@
       const tooltip_elements = root.querySelectorAll(".tooltip-element");
   
       let activeIndex;
-  
+      
       shrink_btn.addEventListener("click", () => {
         document.body.classList.toggle("shrink");
         setTimeout(moveActiveTab, 400);
@@ -112,7 +114,7 @@
     }
   </script>
   
-  <svelte:window on:keydown={handleKeydown}/>
+  <!-- <svelte:window on:keydown={handleKeydown}/> -->
   <div bind:this={root}>
     
     <nav >
@@ -176,16 +178,16 @@
           </div>
         </ul>
     
-        <h4 class="hide" >Shortcuts</h4>
+        <h4 class="hide" >More</h4>
         
         <ul>
           <li class="tooltip-element" data-tooltip="0">
             <a href="#" data-active="4">
               <div class="icon">
-                <i class="bx bx-notepad" />
-                <i class="bx bxs-notepad" />
+                <i class='bx bx-directions'></i>
+                <i class='bx bxs-directions'></i>
               </div>
-              <span class="link hide">Tasks</span>
+              <span class="link hide">Community</span>
             </a>
           </li>
           <li class="tooltip-element" data-tooltip="1">
@@ -198,7 +200,7 @@
             </a>
           </li>
           <li class="tooltip-element" data-tooltip="2">
-            <a href="#" data-active="6">
+            <a href="/my/settings" data-active="6">
               <div class="icon">
                 <i class="bx bx-cog" />
                 <i class="bx bxs-cog" />
@@ -207,7 +209,7 @@
             </a>
           </li>
           <div class="tooltip">
-            <span class="show">Tasks</span>
+            <span class="show">Community</span>
             <span>Help</span>
             <span>Settings</span>
           </div>
